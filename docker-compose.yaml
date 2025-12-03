@@ -1,0 +1,16 @@
+services:
+  db-service:
+    container_name: "mssql_service"
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Servidordoberaldo1!
+      - MSSQL_PID=Developer
+      - TZ=America/Sao_Paulo
+    volumes:
+      - mssqldb:/var/opt/mssql
+    restart: unless-stopped
+volumes:
+  mssqldb:
