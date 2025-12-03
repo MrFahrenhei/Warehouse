@@ -11,6 +11,7 @@ services:
       - TZ=America/Sao_Paulo
     volumes:
       - mssqldb:/var/opt/mssql
+      - /home/beraldo/Documents/Estudo/db/sql-data-warehouse-project/datasets:/datasets
     restart: unless-stopped
 volumes:
   mssqldb:
